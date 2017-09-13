@@ -1,10 +1,10 @@
 module Homework1 where
---import Test.Hspec -- <- DO NOT REMOVE THIS
+import Test.Hspec -- <- DO NOT REMOVE THIS
 -- Function prob1
 -- @type   
 -- @param  Char
 -- @output Char
--- @description:
+-- @description: Takes in a character, if it is a letter it returns the following letter, capital or lowercase, from the alphabet looping z back around to a, otherwise, just what was given
 prob1 :: Char -> Char
 prob1 x = if x `elem` ['a'..'y'] || x `elem` ['A'..'Y'] then succ x else (if x == 'z' then 'a' else (if x == 'Z' then 'A' else x))
 
@@ -12,7 +12,7 @@ prob1 x = if x `elem` ['a'..'y'] || x `elem` ['A'..'Y'] then succ x else (if x =
 -- @type   
 -- @param  Char
 -- @output Int
--- @description:
+-- @description: Takes in a character, and returns it as an integer if it is a number between 0..9, otherwise returns -1
 prob2 :: Char -> Int
 prob2 x = if x `elem` ['0'..'9'] then fromEnum x - fromEnum '0' else -1
 
@@ -22,7 +22,7 @@ prob2 x = if x `elem` ['0'..'9'] then fromEnum x - fromEnum '0' else -1
 -- @param  function of type a -> c
 -- @param  input of type a
 -- @output tuple of type (b, c)
--- @description:
+-- @description: Takes two functions and a character, and returns the tuple of the output of the two functions used on the character
 prob3 :: (a -> b) -> (a -> c) -> a -> (b, c)
 prob3 x y z = ((x z), (y z))
 
@@ -32,7 +32,7 @@ prob3 x y z = ((x z), (y z))
 -- @param  input of type a
 -- @param  input of type a
 -- @output output of type a
--- @description:
+-- @description: Takes in a boolean value, returns the second parameter if the boolean value is true, or the third parameter if false
 prob4 :: Bool -> a -> a -> a
 prob4 x y z = if x then y else z
 
@@ -40,13 +40,12 @@ prob4 x y z = if x then y else z
 -- @type   
 -- @param  Integer
 -- @output Bool
--- @description:
+-- @description: Takes in an integer, and determines if it is a leap year or not
 prob5 :: Integer -> Bool
 prob5 x = if ((x `mod` 4 == 0 && x `mod` 100 /= 0)|| (x `mod` 100 == 0 && x `mod` 400 == 0)) then True else False
 
 -- All Unit Tests Below This Line --
 -- Don't touch anything below this line
-{-
 test_prob1 :: IO ()
 test_prob1 = hspec $ do
   describe "prob1" $ do
@@ -131,6 +130,5 @@ test_all_probs = do
   test_prob3
   test_prob4
   test_prob5
--}
 
                      

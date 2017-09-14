@@ -1,7 +1,7 @@
 module Homework1 where
 import Test.Hspec -- <- DO NOT REMOVE THIS
 -- Function prob1
--- @type   
+-- @type   prob1 :: Char -> Char
 -- @param  Char
 -- @output Char
 -- @description: Takes in a character, if it is a letter it returns the following letter, capital or lowercase, from the alphabet looping z back around to a, otherwise, just what was given
@@ -9,7 +9,7 @@ prob1 :: Char -> Char
 prob1 x = if x `elem` ['a'..'y'] || x `elem` ['A'..'Y'] then succ x else (if x == 'z' then 'a' else (if x == 'Z' then 'A' else x))
 
 -- Function prob2
--- @type   
+-- @type   prob2 :: Char -> Int
 -- @param  Char
 -- @output Int
 -- @description: Takes in a character, and returns it as an integer if it is a number between 0..9, otherwise returns -1
@@ -17,7 +17,7 @@ prob2 :: Char -> Int
 prob2 x = if x `elem` ['0'..'9'] then fromEnum x - fromEnum '0' else -1
 
 -- Function prob3
--- @type   
+-- @type   prob3 :: (a -> b) -> (a -> c) -> a -> (b, c)
 -- @param  function of type a -> b
 -- @param  function of type a -> c
 -- @param  input of type a
@@ -27,7 +27,7 @@ prob3 :: (a -> b) -> (a -> c) -> a -> (b, c)
 prob3 x y z = ((x z), (y z))
 
 -- prob4
--- @type   
+-- @type   prob4 :: Bool -> a -> a -> a
 -- @param  Bool
 -- @param  input of type a
 -- @param  input of type a
@@ -37,7 +37,7 @@ prob4 :: Bool -> a -> a -> a
 prob4 x y z = if x then y else z
 
 -- prob5
--- @type   
+-- @type   prob5 :: Integer -> Bool
 -- @param  Integer
 -- @output Bool
 -- @description: Takes in an integer, and determines if it is a leap year or not
